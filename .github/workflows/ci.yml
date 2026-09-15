@@ -1,0 +1,28 @@
+name: Pipeline de CI
+
+on: 
+  push:
+    branches:
+      ["main"]
+  pull_request:
+    branches:
+      - main
+
+jobs: 
+  testes:
+    name: Testes unitarios
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Configurar Linguagem - Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Executar testes
+        run: |
+          pytest tests/unit
