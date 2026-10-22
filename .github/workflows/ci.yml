@@ -50,7 +50,7 @@ jobs:
 
       - name: Executar testes
         run: |
-          pytest tests/integracao
+          pytest
 
 
   testes-end-to-end:
@@ -72,4 +72,4 @@ jobs:
 
       - name: Executar testes
         run: |
-          pytest tests/end_to_end
+          pytest tests/e2e
