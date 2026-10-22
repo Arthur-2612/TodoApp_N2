@@ -8,7 +8,7 @@ def test_jornada_completa_usuario_crud_e2e(client):
     5. Atualiza status de conclusão e valida alterações.
     6. Remove item e valida atualização da lista e persistência final.
     """
-    # 1. Health check
+    # 1 Health check
     res_health = client.get("/health")
     assert res_health.status_code == 200
     assert res_health.get_json()["status"] == "ok"
